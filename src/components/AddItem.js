@@ -6,6 +6,7 @@ export function AddItem(props) {
     const [inputValue, setInputValue] = useState("")
 
     function createItem() {
+        setAddNew(!addNew);
         props.createItem(inputValue)
     }
 
@@ -26,7 +27,7 @@ export function AddItem(props) {
         );
     } else {
         return (
-            <Layout margin={'20px'}>
+            <Layout margin={'20px 50px'} minWidth={"300px"}>
                 <Layout>
                     <InputField
                         type='text'
@@ -35,6 +36,7 @@ export function AddItem(props) {
                         border={'2px solid #949cbc'}
                         borderRadius={'5px'}
                         onChange={event => setInputValue(event.target.value)}
+                        background={'#f9f9f8'}
                     />
                 </Layout>
                 <Layout>

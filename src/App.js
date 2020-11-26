@@ -7,7 +7,7 @@ import {Layout} from "./components";
 function App() {
   return (
     <div className="App">
-        <Layout width={'45vw'} margin={'50px auto'}>
+        <Layout width={'45vw'} margin={'0 auto'} background={'#e3e9ff'}>
             <Header />
             <Items />
         </Layout>

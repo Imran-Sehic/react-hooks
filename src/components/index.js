@@ -13,6 +13,10 @@ export const Layout = styled.div`
   border-radius: ${props => props.borderRadius ? props.borderRadius : ""};
   box-shadow: ${props => props.boxShadow ? props.boxShadow : ""};
   border: ${props => props.border ? props.border : ""};
+  min-width: ${props => props.minWidth ? props.minWidth : ""};
+  max-height: ${props => props.maxHeight ? props.maxHeight : ""};
+  z-index: ${props => props.zIndex ? props.zIndex : ""};
+  position: ${props => props.position ? props.position : ""};
 `;
 
 export const Btn = styled.button`
