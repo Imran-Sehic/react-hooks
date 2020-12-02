@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getPosts } from "../constants";
 import Item from "./Item";
-import {  InputField, Layout } from "./index";
+import {Btn, InputField, Layout} from "./index";
 import {AddItem} from "./AddItem";
 import { useSelector, useDispatch } from "react-redux";
 import {addItem, deleteItem, editItem, loadItems, toggleItem} from "../redux/ducks/todosItems";
 import IsDone from "./IsDone";
+import {getUser} from "../redux/ducks/user";
 
 const Items = () => {
     const [hasError, setErrors] = useState(false);

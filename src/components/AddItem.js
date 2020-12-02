@@ -1,18 +1,27 @@
 import { useState } from 'react';
 import {Btn, InputField, Layout} from "./index";
+import {getUser} from "../redux/ducks/user";
+import { useSelector, useDispatch } from "react-redux";
 
 export function AddItem(props) {
     const [addNew, setAddNew] = useState("")
     const [inputValue, setInputValue] = useState("")
+    const dispatch = useDispatch();
 
     function createItem() {
         setAddNew(!addNew);
         props.createItem(inputValue)
     }
 
+    function setUsers() {
+        dispatch(getUser())
+    }
+
     if (!addNew) {
         return (
-            <Btn
+            <>
+                <Btn onClick={() => setUsers()}>Set</Btn>
+                <Btn
                 background={'#af7eeb'}
                 padding={'12px 32px 11px'}
                 borderRadius={'22.5px'}
@@ -24,6 +33,7 @@ export function AddItem(props) {
             >
                 + New Task
             </Btn>
+            </>
         );
     } else {
         return (
